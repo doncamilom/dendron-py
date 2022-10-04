@@ -1,0 +1,19 @@
+name: tests
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup conda env and package
+      run: |
+        wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh |
+             bash -s -- --batch
+        conda env update -f env-dev.yml --name base
+        echo $CONDA/bin >> $GITHUB_PATH
+    - name: Test with tox
+      run: |
+        tox
