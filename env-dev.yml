@@ -1,0 +1,17 @@
+name: dendron-py
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.8
+  - pip
+  - pip:
+     - -e .  # install git checkout of topkretro in editable mode
+     - pytest
+     - pytest-cov
+     - tox
+ # - pre_commit
+ # - nbdime
+ # - nbstripout
+ # - sphinx
+ # - recommonmark
