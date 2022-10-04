@@ -4,6 +4,7 @@ channels:
   - conda-forge
 dependencies:
   - python=3.8
+  - click
   - pip
   - pip:
      - -e .  # install git checkout of topkretro in editable mode
